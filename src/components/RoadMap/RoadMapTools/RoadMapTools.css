@@ -1,0 +1,22 @@
+.tool {
+  padding: 10px;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+}
+
+.target {
+  width: 50%;
+
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.not-yet {
+  text-align: center;
+  height: 20px;
+  margin: auto;
+
+}

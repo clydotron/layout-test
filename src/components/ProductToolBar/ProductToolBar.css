@@ -1,0 +1,46 @@
+
+.ProductToolBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.ProductToolBar h1 {
+  text-align: left;
+  display: inline-block;
+}
+
+.notusing {
+    width: 4.33rem;
+      justify-content: right;
+}
+
+.ProductToolBar-view-options ul {
+  display: flex;
+  text-align: center;
+  margin-bottom: 0.22rem;
+  color: black;
+  list-style-type: none;
+}
+
+.ProductToolBar-view-options li {
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+  padding: 0.33rem 1.58rem 0.55rem 1.58rem;
+  line-height: 1.13;
+  text-align: center;
+  font-weight: 600;
+  font-size: .83rem;
+  transition: color .25s;
+}
+
+.ProductToolBar-view-options li:hover {
+  color: #d4cfcf;
+}
+
+.ProductToolBar-view-options li.active,
+.ProductToolBar-view-options li.active:hover {
+  border-bottom: 1px solid #f0c36c;
+  color: #f0c36c;
+}
