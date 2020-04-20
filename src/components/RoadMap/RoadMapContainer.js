@@ -2,7 +2,6 @@ import React from 'react';
 import './RoadMapContainer.css'
 import RoadMapWorkArea from './RoadMapWorkArea/RoadMapWorkArea';
 import RoadMapTools from './RoadMapTools/RoadMapTools';
-import styled from 'styled-components';
 import { DragDropContext } from 'react-beautiful-dnd';
 import initialData from '../../initial-data';
 
@@ -18,7 +17,85 @@ class RoadMapContainer extends React.Component {
         { id: 'tool-2', name: 'Task', type: 'task'}
       ],
       roadmap: initialData,
+      nextId: {
+        lane: 5,
+        task: 10,
+        row: 10,
+      },
+      nextLaneId: 15,
+      nextTaskId: 100,
+      nextRowId: 10
     }
+  }
+
+  createNewLane = () => {
+
+    //we are going to create a new lane!
+    const nextLaneId = this.state.nextLaneId;
+    const newLaneId = `lane-${nextLaneId}`;
+    this.setState({nextLaneId: nextLaneId+1 });
+
+    const newLane = {
+      id: newLaneId,
+      title: "New lane",
+      color: 'orange',
+      rowIds: [],
+    };
+
+    //should i create the row here?
+
+    //const lanes = this.state.roadmap.lanes;
+    //lanes[newLaneId] = newLane;
+
+    return newLane;
+  }
+
+  createNewTask = () => {
+
+    const nextTaskId = this.state.nextTaskId;
+    const newTaskId = `task-${nextTaskId}`;
+    this.setState({nextTaskId: nextTaskId+1 });
+
+    const newTask = {
+      id: newTaskId,
+      title: "New task",
+      color: 'red'
+    }
+
+    // if we do this here, we need to call setState... 
+    //const tasks = roadmap.tasks;
+    //tasks[newTaskId] = newTask;
+
+    return newTask;
+  }
+
+  createNewRow = () => {
+
+    const nextRowId = this.state.nextRowId;
+    const newRowId = `row-${nextRowId}`;
+    this.setState({nextRowId: nextRowId+1 });
+
+    const newRow = {
+      id: newRowId,
+      taskIds: []
+    }
+
+    // const roadmap = this.state.roadmap;
+
+    // const rows = roadmap.rows;
+    // const newRoadmap = {
+    //   ...roadmap,
+    //   rows: {
+    //     ...roadmap.rows,
+    //     [newRowId]: newRow,         
+    //   }
+    // }
+    // this.setState({roadmap: newRoadmap});
+
+    // console.log("new row");
+    // console.log(newRoadmap);
+
+    return newRow;
   }
 
 
@@ -33,34 +110,90 @@ class RoadMapContainer extends React.Component {
       return;
     }
 
-    if (type === 'lane' && source.draggableId === 'tool-area') {
+    // this is quasi dangerous, as it is a copy, so as long as we only use this
+    // or not at all
+    //const roadmap = this.state.roadmap;
 
+    //need a more robust name
+    if (type === 'lane' && source.droppableId === 'tool-area-lane') {
       console.log("new lane!");
 
-      //we are going to create a new lane!
+      const newLane = this.createNewLane();
+
+      const lanes = this.state.roadmap.lanes;
+      lanes[newLane.id] = newLane;
+
+      const newLaneOrder = Array.from(this.state.roadmap.orderedLanes);
+      newLaneOrder.splice(destination.index, 0, newLane.id);
+      
+      const newRow = this.createNewRow(); 
+      newLane.rowIds = [newRow.id];
+
+      const newRoadmap = {
+        ...this.state.roadmap,
+        orderedLanes: newLaneOrder,
+        lanes: lanes,
+        rows: {
+          ...this.state.roadmap.rows,
+          [newRow.id]: newRow,
+        }
+      };
+      this.setState({roadmap: newRoadmap});
+
+      return;
     }
+
+    if ( type === 'task' && source.droppableId === 'tool-area-task') {
+      console.log("new task!");
+
+      const newTask = this.createNewTask();
+      
+      const tasks = this.state.roadmap.tasks;
+      tasks[newTask.id] = newTask;
+
+      const newRow = this.state.roadmap.rows[destination.droppableId];
+      const newTaskRow = Array.from(newRow.taskIds);
+      newTaskRow.splice(destination.index, 0, newTask.id);
+    
+      newRow.taskIds = newTaskRow;
+
+      const newRoadmap = {
+        ...this.state.roadmap,
+        rows: {
+          ...this.state.roadmap.rows,
+          [newRow.id]: newRow,         
+        }
+      }
+      this.setState({roadmap: newRoadmap});
+
+      //determine if we need to add another row... (how do we determine the parent)
+      //
+      return;
+    }
+
 
     // if this is a lane, reorder the lanes:
     if (type === 'lane') {
-  
-      const newLaneOrder = Array.from(this.state.orderedLanes);
+      const roadmap = this.state.roadmap;
+
+      const newLaneOrder = Array.from(roadmap.orderedLanes);
       newLaneOrder.splice(source.index,1);
       newLaneOrder.splice(destination.index, 0, draggableId);
     
       const newRoadmap = {
-        ...this.state.roadmap,
+        ...roadmap,
         orderedLanes: newLaneOrder,
       }
       this.setState({roadmap: newRoadmap});
       return;
     }
 
-    const roadmap = this.state.roadmap;
-
     if (type === 'task') {
+      const roadmap = this.state.roadmap;
+
       //check to see if this is a re-order:
-      const srcRow = this.state.rows[source.droppableId];
-      const dstRow = this.state.rows[destination.droppableId];
+      const srcRow = roadmap.rows[source.droppableId];
+      const dstRow = roadmap.rows[destination.droppableId];
       
       if ( srcRow === dstRow ) {
 
@@ -73,22 +206,21 @@ class RoadMapContainer extends React.Component {
           ...srcRow,
           taskIds: newTaskIds,
         }
-  
-        console.log(newRow);
-
-        const newState = {
-          ...this.state,
+     
+        const newRoadmap = {
+          ...roadmap,
           rows: {
-            ...this.state.rows,
-            [newRow.id]: newRow,
+            ...roadmap.rows,
+            [newRow.id]: newRow,         
           }
         }
-
-        this.setState(newState);
-        //this.setState({rows: {}})
+        console.log(newRoadmap)
+        this.setState({roadmap: newRoadmap});
       }
       else {
         console.log("different!");
+        console.log(this.state.roadmap);
+
         const newSrcTaskIds = Array.from(srcRow.taskIds);
         newSrcTaskIds.splice(source.index,1);
 
@@ -104,18 +236,23 @@ class RoadMapContainer extends React.Component {
           taskIds: newDstTaskIds,
         }
 
-        const newState = {
-          ...this.state,
+        const newRoadmap = {
+          ...this.state.roadmap,
           rows: {
-            ...this.state.columns,
+            ...this.state.roadmap.rows,
             [newSrcRow.id]: newSrcRow,
-            [newDstRow.id]: newDstRow,
+            [newDstRow.id]: newDstRow,      
           }
         }
-  
-        this.setState(newState);
+        console.log("different! -- AFTER");
+        console.log(newRoadmap);
+             
+        this.setState({roadmap: newRoadmap});
 
-
+        console.log("different! -- AFTER");
+        console.log(this.state.roadmap);
+    
+        
         //validate that rows work correctly:
       }
     }

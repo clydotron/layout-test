@@ -7,6 +7,11 @@ import Task from '../Task/Task'
 const TaskList = styled.div`
   display: flex;
   flex-direction: row;
+  transition: background-color 0.2s ease;
+  background-color: ${props => (props.isDraggingOver ? 'lightgreen' : 'yellow' )};
+  flex-grow: 1;
+  min-height: 2px;
+
 `;
 
 // task rows are

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Draggable, Droppable } from 'react-beautiful-dnd';
-import Task from '../Task/Task'
+import { Draggable } from 'react-beautiful-dnd';
 import TaskRow from '../TaskRow/TaskRow';
 
 const Container = styled.div`

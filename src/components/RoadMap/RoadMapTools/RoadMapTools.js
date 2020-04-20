@@ -2,13 +2,26 @@ import React from 'react';
 import './RoadMapTools.css'
 import RoadMapTool from '../RoadMapTool';
 //import styled from 'styled-components';
-import { Droppable } from 'react-beautiful-dnd';
+//import { Droppable } from 'react-beautiful-dnd';
 
 
 class RoadMapTools extends React.Component {
 
   render() {
     return (
+      <div>
+        <h3>tools</h3>
+        {this.props.tools.map((tool,index) => (
+          <RoadMapTool key={tool.id} tool={tool} index={index} />
+        ))}
+      </div>
+    );
+  }
+}
+
+export default RoadMapTools;
+
+/*
       <Droppable droppableId="tool-area" type="lane" >
         {(provided) => (
           <div 
@@ -24,8 +37,4 @@ class RoadMapTools extends React.Component {
           </div>
         )}
       </Droppable>
-    );
-  }
-}
-
-export default RoadMapTools;
+*/
