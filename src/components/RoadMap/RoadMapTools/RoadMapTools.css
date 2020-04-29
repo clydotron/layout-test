@@ -9,6 +9,10 @@
 
 }
 
+.tool_area {
+  padding: 16px;
+  background-color: violet;
+}
 .app-container {
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,7 @@ const Container = styled.div`
   border: 1px solid lightgrey;
   border-radius: 2px;
   padding: 8px;
-  margin: 8px;
+  margin: 4px;
   width: 250px;
   height: 24px;
   background-color: ${props => props.isDragging ? 'lightgreen' : props.bkColor};

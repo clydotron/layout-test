@@ -39,7 +39,10 @@ console.log(props);
   render() {
     return (
       <div className="ProductToolBar">
-        <h1>{this.props.title}</h1>
+        <div className="ProductToolBar-view-title">
+          <h1>{this.props.title}</h1>
+        </div>
+
         <div className="ProductToolBar-view-options">
           <ul>
             {this.renderViewOptions()}

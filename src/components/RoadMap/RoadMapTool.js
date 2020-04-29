@@ -1,14 +1,30 @@
 import React from 'react';
-//import './RoadMapTool.css'
+import './RoadMapTool.css'
 import styled from 'styled-components';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+//border: 1px solid lightgrey;
 
-const Container = styled.div`
-  border: 1px solid lightgrey;
-  border-radius: 2px;
+const Container = styled.div` 
+box-sizing: border-box;
+  border-radius: 4px;
   padding: 8px;
-  margin: 8px;
-  background-color: ${props => props.isDragging ? 'lightblue' : 'white'};
+  margin-bottom: 8px;
+  height: 36px;
+  background-color: ${props => props.isDragging ? 'lightblue' : '#E4E6E8'};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: Helvetica;
+  font-size: 16px;
+`;
+
+const ToolIcon = styled.div`
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: url("../../tools_icon.svg");
+  background-size: 26px 26px;
+
 `;
 
 class RoadMapTool extends React.Component {
@@ -31,6 +47,8 @@ render() {
                   ref={provided.innerRef}
                   isDragging={snapshot.isDragging}
                 >
+                  <div className="logox" />
+            
                   {this.props.tool.name}
 
                 </Container>

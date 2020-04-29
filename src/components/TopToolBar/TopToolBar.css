@@ -1,0 +1,38 @@
+.TopToolBar {
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: 50px;
+  border-bottom: 1px solid lightgrey;
+  height: 50px;
+  background-color: Aqua;
+  margin: 0;
+}
+
+.workspace-logo {  
+  grid-column: 1 / span 1;
+  border-right: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+}
+
+.logo {
+  display: block;
+  width: 34px;
+  height: 28px;
+  background: url("../../pp_logo.svg");
+  background-size: 34px 28px;
+}
+
+.workspace-title {
+  grid-column: 2 / span 1;
+  justify-self: start;
+  padding-left: 20px;
+  font-family: "Gilroy-Bold";
+}
+
+.workspace-search {
+  grid-column: 3 / span 1;
+  background-color: lightblue;
+  align-items: center;
+}

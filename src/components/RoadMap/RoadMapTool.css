@@ -2,4 +2,25 @@
   padding: 10px;
   border: 3px solid grey;
   margin: 20px;
+  background-color: #E4E6E8;
+  border-radius: 4;
+  height: 36;
+}
+
+.toolx {
+  display: block;
+  width: 34px;
+  height: 28px;
+  background: url("tools_icon.svg");
+  background-size: 34px 28px;
+
+}
+
+.logox {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: url("../../tools_icon.svg");
+  background-size: 26px 26px;
+  background-color: greenyellow;
 }

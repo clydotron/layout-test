@@ -6,7 +6,16 @@ class TopToolBar extends React.Component {
   render() {
     return (
       <div className="TopToolBar">
-        <h1>{this.props.title}</h1>
+        <div className="workspace-logo">
+          <div className="logo" />
+          logo
+        </div>
+        <div className="workspace-title">
+          <h1>{this.props.title}</h1>
+        </div>
+        <div className="workspace-search">Search
+        <i className="fas fa-search"></i>
+        </div>
       </div>
     );
   }

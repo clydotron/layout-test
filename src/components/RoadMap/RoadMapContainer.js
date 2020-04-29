@@ -13,8 +13,8 @@ class RoadMapContainer extends React.Component {
 
     this.state = {
       tools: [
-        { id: 'tool-1', name: 'Lane', type: 'lane'},
-        { id: 'tool-2', name: 'Task', type: 'task'}
+        { id: 'tool-1', name: 'Add Lane', type: 'lane'},
+        { id: 'tool-2', name: 'Add Task', type: 'task'}
       ],
       roadmap: initialData,
       nextId: {

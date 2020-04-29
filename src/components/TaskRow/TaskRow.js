@@ -8,10 +8,10 @@ const TaskList = styled.div`
   display: flex;
   flex-direction: row;
   transition: background-color 0.2s ease;
-  background-color: ${props => (props.isDraggingOver ? 'lightgreen' : 'yellow' )};
+  background-color: ${props => (props.isDraggingOver ? 'lightgreen' : 'inherit' )};
+  opacity: ${props => (props.isDraggingOver ? 0.6 : 1.0)};
   flex-grow: 1;
   min-height: 2px;
-
 `;
 
 // task rows are

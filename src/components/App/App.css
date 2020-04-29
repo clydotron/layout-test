@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  margin: 20px;
+  margin: 0;
 }
 
 .App-logo {
@@ -36,4 +36,41 @@
   to {
     transform: rotate(360deg);
   }
+}
+.test1 {
+  margin: 0;
+  padding: 10px;
+  background: blueviolet;
+  height:60px;
+  position: relative;
+}
+
+.bottom > * {
+  vertical-align: bottom;
+}
+
+.test-left {
+  float: left;
+  vertical-align: bottom;
+}
+
+.test-right {
+  float: right;
+  
+}
+
+.test-bottom {
+  background-color: aqua
+}
+
+.test-bottom-left {
+  float: left;
+  align-items: center;
+  background-color: orchid;
+}
+
+.test-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

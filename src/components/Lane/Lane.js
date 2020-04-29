@@ -13,6 +13,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 80px;
+
+  background: repeating-linear-gradient(
+    to right,
+    #ffffff,
+    #ffffff 124px,
+    #d8d8d8 124px,
+    #d8d8d8 125px
+  );
 `;
 
 const Title = styled.h3`
@@ -26,10 +34,6 @@ const Title = styled.h3`
   
 `;
 
-const TaskList = styled.div`
-display: flex;
-flex-direction: row;
-`;
 
 class Lane extends React.Component {
 
@@ -45,32 +49,11 @@ class Lane extends React.Component {
             {this.props.rows.map((row, index) => {
               return <TaskRow key={row.id} id={row.id} tasks={row.tasks} index={index} />
             })}
-
-
           </Container>
-
         )}
       </Draggable>
     )
   }
 };
-/* <Droppable 
-droppableId={this.props.lane.id} 
-direction="horizontal" 
-type="task"
->
-{(provided,snapshot) => (
-  <TaskList
-    ref={provided.innerRef}
-    {...provided.droppableProps}
-    isDraggingOver={snapshot.isDraggingOver}
-  >
-    {this.props.tasks.map((task, index) => {
-      return <Task key={task.id} task={task} index={index}/>
-    })}
-    {provided.placeholder}
-  </TaskList>
-)}
-</Droppable> */
 
 export default Lane;

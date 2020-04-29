@@ -3,7 +3,7 @@ import './App.css';
 import TopToolBar from '../TopToolBar/TopToolBar';
 import ProductToolBar from '../ProductToolBar/ProductToolBar';
 import WorkArea from '../WorkArea/WorkArea';
-import { DragDropContext } from 'react-beautiful-dnd';
+
 
 class App extends React.Component {
 
@@ -23,26 +23,31 @@ class App extends React.Component {
     console.log(view);
   }
 
-  onDragEnd = (result) => {
-    console.log(result);
-
-  }
-
-  onDragStart = start => {
-    // store where the start originated:
-    // if from the tool bar, then we will need to clone the object (since we want the original to stay put)
-  }
-
 
   render() {
     return (
-      <DragDropContext onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
+
         <div className="App">
           <TopToolBar title={this.state.title}/>
+          <div className="test1 bottom">
+            <div className="test-bottom-right">
+              poop
+            </div>
+
+              <div className="test-bottom-left">
+                Bottom Left
+              </div>
+
+            <div className="test-right">
+              <h3 className="test-bottom">
+                bottom2
+              </h3>
+            </div>
+          </div>
           <ProductToolBar title={this.state.title} onViewSelect={this.handleViewSelect}/>
           <WorkArea view={this.state.view}/>
         </div>
-      </DragDropContext>
+
     );
   }
 }
