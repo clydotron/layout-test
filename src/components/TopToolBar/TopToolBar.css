@@ -13,26 +13,37 @@
   border-right: 1px solid lightgrey;
   display: flex;
   flex-direction: row;
-  margin: 8px;
+  margin-left: 8px;
 }
 
 .logo {
   display: block;
-  width: 34px;
-  height: 28px;
+  width: 17px;
+  height: 14px;
   background: url("../../pp_logo.svg");
-  background-size: 34px 28px;
+  background-size: 17px 14px;
+  margin-top: 18px;
 }
 
 .workspace-title {
   grid-column: 2 / span 1;
   justify-self: start;
-  padding-left: 20px;
-  font-family: "Gilroy-Bold";
+  margin-left: 16px;
+  font-family: Helvetica;
+  font-size: 16pt;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
 }
 
 .workspace-search {
   grid-column: 3 / span 1;
   background-color: lightblue;
-  align-items: center;
+  align-items: right;
+  margin: 16px;
+}
+
+.workspace-search-icon {
+
 }

@@ -2,7 +2,7 @@
 const initialData = {
 
   tasks: {
-    'task-1': {id:'task-1', title:'task 1', color: 'red'},
+    'task-1': {id:'task-1', title:'task 1', color: '#1973BA'},
     'task-2': {id:'task-2', title:'task 2', color: 'green'},
     'task-3': {id:'task-3', title:'task 3', color: 'blue'},
   },
@@ -16,7 +16,7 @@ const initialData = {
     'lane-1': {
       id:'lane-1', 
       title: 'Lane 1', 
-      color: 'orange',
+      color: '#EF6031',
       rowIds: ['row-1','row-2'],
     },
     'lane-2': {
@@ -27,7 +27,8 @@ const initialData = {
     }
   },
   
-  orderedLanes: ['lane-1','lane-2']
+  orderedLanes: ['lane-1','lane-2'],
+
 }
 
 export default initialData;

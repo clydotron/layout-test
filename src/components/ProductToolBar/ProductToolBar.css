@@ -1,4 +1,6 @@
 
+@import "../../index.css";
+
 .ProductToolBar {
   
   margin: 0;
@@ -73,5 +75,5 @@ vertical-align: bottom;
 .ProductToolBar-view-options li.active,
 .ProductToolBar-view-options li.active:hover {
   border-bottom: 1px solid #f0c36c;
-  color: #896cf0;
+  color: #f0c36c;
 }

@@ -7,29 +7,33 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="127.35223mm"
-   height="137.9575mm"
-   viewBox="0 0 127.35223 137.9575"
+   width="391.0733"
+   height="471.21426"
+   viewBox="0 0 100 128"
    version="1.1"
    id="svg47"
    inkscape:version="1.0rc1 (09960d6, 2020-04-09)"
-   sodipodi:docname="tools_icon.svg"
+   sodipodi:docname="tools_icon_2.svg"
    inkscape:export-filename="/Users/briangreen/tools_icon.png"
    inkscape:export-xdpi="23.566677"
    inkscape:export-ydpi="23.566677">
   <defs
      id="defs41" />
   <sodipodi:namedview
+     units="px"
+     inkscape:pagecheckerboard="false"
+     showborder="true"
+     showguides="false"
      id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.76683577"
-     inkscape:cx="191.22644"
-     inkscape:cy="517.57824"
-     inkscape:document-units="mm"
+     inkscape:zoom="2.1689391"
+     inkscape:cx="257.27321"
+     inkscape:cy="245.30112"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="true"
@@ -40,8 +44,8 @@
      inkscape:window-y="64"
      inkscape:window-maximized="0">
     <inkscape:grid
-       originy="0.18708843"
-       originx="0.17611551"
+       originy="-5.1304372"
+       originx="0.14198901"
        type="xygrid"
        id="grid59" />
   </sodipodi:namedview>
@@ -53,41 +57,36 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0.1761155,0.18708843)"
+     transform="translate(0.31810449,-4.9433489)"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 37.041667,26.458334 63.5,0 89.958331,26.458334 Z"
-       id="path61"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:#666666;stroke:#4d4d4d;stroke-width:0.349381"
-       d="m 0,50.079197 v -13.03753 h 63.395014 63.395016 v 13.03753 13.03754 H 63.395014 0 Z"
+       style="fill:#666666;stroke:#4d4d4d;stroke-width:0.291551"
+       d="M -3.2876386,49.929248 V 39.063707 H 49.681895 102.65143 v 10.865541 10.86555 H 49.681895 -3.2876386 Z"
        id="path80"
        inkscape:connector-curvature="0" />
     <path
        inkscape:connector-curvature="0"
        id="path80-5"
-       d="M 0,87.312497 V 74.083337 H 63.499994 127 v 13.22916 13.229173 H 63.499994 0 Z"
-       style="fill:#666666;stroke:#4d4d4d;stroke-width:0.352231" />
+       d="M -3.2876386,84.563175 V 74.37673 H 49.68189 102.65143 V 84.563175 94.749628 H 49.68189 -3.2876386 Z"
+       style="fill:#666666;stroke:#4d4d4d;stroke-width:0.282293" />
     <path
-       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 63.5,137.58333 89.95833,111.125 H 37.041668 Z"
+       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.239793px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 51.040089,130.06063 74.838424,105.89911 H 27.241753 Z"
        id="path112"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
-       style="fill:#666666;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.30406"
-       d="M 191.54104,50.345784 240.1151,1.7717302 288.68915,50.345784 337.2632,98.919838 h -97.1481 -97.14811 z"
-       id="path989"
+       sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
-       transform="scale(0.26458333)" />
+       id="path112-4"
+       d="M 51.040089,5.1031646 27.230956,26.839969 h 47.618266 z"
+       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.227494px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
 </svg>

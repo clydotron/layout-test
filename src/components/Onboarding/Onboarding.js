@@ -4,22 +4,40 @@ import PropTypes from 'prop-types';
 
 class Onboarding extends React.Component {
 
-  constructor(props) {
-    super(props);
 
-    const addLane = {
-      title: "We'll start with a lane",
-      body: "Lanes represent high level categories, such as teams, product lines, or strategic initiatives. Add a color and description to your lane to communicate details to stakeholders.";
-      callToAction: "Drag and drop a lane to get started",
-      buttonText: "Got it"
-    };
+  renderAddLane() {
 
-    const addTask = {
-      title: "Awesome! Now let's add few bars.",
-      body: "Bars are your specific initiative. Use them to represent your epics, projects, or tasks, and provide an at a glance view of priority, relationships and progress.",
-      callToAction: "Drag and drop a bar to get started",
-      buttonText: "Got it"
-    }
+    return (
+      <div className="contentArea">
+
+        <div className="topzone" >
+          <button className="x_button" onClick={this.props.onClose}>x</button>
+        </div>
+        <div className="drop_target">
+          <div className="dropped_item">
+            <div className="di_icon_box">
+                    <div className="di_icon_svg" />
+                  </div>
+            <div className="dropped_item_text">
+              Add Lane
+            </div>
+          </div>
+        </div>
+
+        <h3>{this.props.content.title}</h3>
+        <p>
+          {this.props.content.body}
+        </p>
+        <h5>
+          {this.props.content.callToAction}
+        </h5>
+        <div className="buttonZone">  
+          <button className="okButton" onClick={this.props.onClose}>
+            {this.props.content.buttonText}
+          </button>
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -29,14 +47,12 @@ class Onboarding extends React.Component {
 
     return (
       <div className="backdrop">
-        <div className="onboarding">
-          {this.props.children}
-
-          <div className="footer">
-            <button onClick={this.props.onClose}>
-              Close
-            </button>
+        <div id="onboarding" className="on left">
+          <div className="onboarding-arrow"/>
+          <div className="onboarding-inner">
+            {this.renderAddLane()}
           </div>
+
         </div>
       </div>
     )

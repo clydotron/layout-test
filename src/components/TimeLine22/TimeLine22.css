@@ -1,0 +1,44 @@
+.timeline-main {
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  align-content: start;
+  height: 300px;
+  background-color: rgb(31, 105, 105);
+}
+
+.timeline-main > * {
+  grid-column: 2 / -2;
+}
+
+.timeline-main > .full {
+  grid-column: 1 / -1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-scrollable {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 
+    10px 
+    repeat(12, 200px) 10px;
+  grid-template-rows: minmax(150px,1fr);
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+}
+.timeline-scrollable::before, .timeline-scrollable::after {
+  content: '';
+
+}
+.timeline-scrollable > li, item {
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: olivedrab;
+  border-radius: 8px;
+}

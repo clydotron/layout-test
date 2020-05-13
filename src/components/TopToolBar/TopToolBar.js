@@ -1,5 +1,7 @@
 import React from 'react';
-import './TopToolBar.css'
+import '../../index.css';
+import './TopToolBar.css';
+
 
 class TopToolBar extends React.Component {
 
@@ -11,9 +13,10 @@ class TopToolBar extends React.Component {
           logo
         </div>
         <div className="workspace-title">
-          <h1>{this.props.title}</h1>
+          {this.props.title}
         </div>
         <div className="workspace-search">Search
+        
         <i className="fas fa-search"></i>
         </div>
       </div>

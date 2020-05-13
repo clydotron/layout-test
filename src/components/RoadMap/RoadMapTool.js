@@ -5,7 +5,7 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 //border: 1px solid lightgrey;
 
 const Container = styled.div` 
-box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 4px;
   padding: 8px;
   margin-bottom: 8px;
@@ -47,8 +47,10 @@ render() {
                   ref={provided.innerRef}
                   isDragging={snapshot.isDragging}
                 >
-                  <div className="logox" />
-            
+                  <div className="image_box">
+                    <div className="bg_svg" />
+                  </div>
+                
                   {this.props.tool.name}
 
                 </Container>
